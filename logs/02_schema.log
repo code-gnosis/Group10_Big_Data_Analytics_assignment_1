@@ -1,0 +1,52 @@
+SET
+DROP TABLE
+NOTICE:  table "energy_live" does not exist, skipping
+CREATE TABLE
+NOTICE:  table "energy_readings" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+      create_hypertable       
+------------------------------
+ (1,public,energy_readings,t)
+(1 row)
+
+NOTICE:  table "meters" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+
+--- Table column types ---
+   table_name    |  column_name  |        data_type         
+-----------------+---------------+--------------------------
+ energy_live     | meter_id      | bigint
+ energy_live     | event_time    | timestamp with time zone
+ energy_live     | received_time | timestamp with time zone
+ energy_live     | power_kw      | double precision
+ energy_live     | voltage_v     | double precision
+ energy_live     | current_a     | double precision
+ energy_live     | frequency_hz  | double precision
+ energy_live     | energy_kwh    | double precision
+ energy_readings | meter_id      | bigint
+ energy_readings | event_time    | timestamp with time zone
+ energy_readings | received_time | timestamp with time zone
+ energy_readings | power_kw      | double precision
+ energy_readings | voltage_v     | double precision
+ energy_readings | current_a     | double precision
+ energy_readings | frequency_hz  | double precision
+ energy_readings | energy_kwh    | double precision
+ meters          | meter_id      | bigint
+ meters          | region        | text
+ meters          | customer_type | text
+ meters          | base_power_kw | double precision
+ meters          | power_factor  | double precision
+(21 rows)
+
+
+--- Hypertable chunk interval ---
+ERROR:  missing FROM-clause entry for table "ds"
+LINE 2:        (SELECT (ds.interval_length / 1e6)::bigint AS seconds
+                        ^
+ hypertable_name | column_name | time_interval 
+-----------------+-------------+---------------
+ energy_readings | event_time  | 1 day
+(1 row)
+

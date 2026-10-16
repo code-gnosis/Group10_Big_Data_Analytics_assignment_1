@@ -1,0 +1,26 @@
+── 7.3 Row-by-row verification Raw vs Aggregate ──
+  Panel 1 [Hourly regional energy (kWh)                           ]  rows raw= 1680  agg= 1680  max_abs_diff=373.197805
+  Panel 2 [Daily network energy (kWh)                             ]  rows raw=    7  agg=    8  max_abs_diff=141032.357065
+  Panel 3 [7-day network energy (periods starting 1,8,15,22 Sep)  ]  rows raw=    4  agg=    4  max_abs_diff=0.000000
+  Panel 4 [Daily energy — meter 1000000000                        ]  rows raw=    7  agg=    7  max_abs_diff=0.323833
+  Panel 5 [Completeness by region (%)                             ]  rows raw=   10  agg=   10  max_abs_diff=0.000000
+
+── 7.4 Per-panel timings (1 warmup + 10 measured, median ms) ──
+
+  Raw dashboard:
+    total refresh (all 5 panels): median= 8413.9  min= 7442.3  max= 9402.1 ms
+    panel 1  Hourly regional energy (kWh)              med=  250.1  min=  215.4  max=  315.7 ms
+    panel 2  Daily network energy (kWh)                med=  153.9  min=  149.9  max=  171.6 ms
+    panel 3  7-day network energy (periods starting 1  med= 1761.2  min= 1557.8  max= 2026.8 ms
+    panel 4  Daily energy — meter 1000000000           med=    1.3  min=    1.1  max=    1.8 ms
+    panel 5  Completeness by region (%)                med= 5402.9  min= 5216.8  max= 5962.6 ms
+
+  Aggregate dashboard:
+    total refresh (all 5 panels): median=   11.6  min=   11.1  max=   19.5 ms
+    panel 1  Hourly regional energy (kWh)              med=    2.6  min=    2.4  max=    3.1 ms
+    panel 2  Daily network energy (kWh)                med=    1.0  min=    0.9  max=    1.3 ms
+    panel 3  7-day network energy (periods starting 1  med=    3.6  min=    3.4  max=    3.8 ms
+    panel 4  Daily energy — meter 1000000000           med=    0.4  min=    0.3  max=    0.5 ms
+    panel 5  Completeness by region (%)                med=    3.5  min=    3.4  max=    3.7 ms
+
+saved → /Users/thierrys/Library/CloudStorage/OneDrive-Personal/Desktop/Dr Thierry/AUCA/Big Data Analytics/Assignment_I_October_2026/project/outputs/dashboard_timings.json

@@ -1,0 +1,43 @@
+── 8.1 Building hourly regional dataset ──
+/Users/thierrys/Library/CloudStorage/OneDrive-Personal/Desktop/Dr Thierry/AUCA/Big Data Analytics/Assignment_I_October_2026/project/code/15_forecast.py:28: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql("""
+  built: 6,720 rows across 10 regions and 672 hours
+  readings per row: min=1562 max=1597 median=1584
+
+  train: 2026-09-01 → 2026-09-15 (exclusive)
+  val  : 2026-09-15 → 2026-09-22 (exclusive)
+  test : 2026-09-22 → 2026-09-29 (exclusive)
+
+── 8.2 Previous-day baseline ──
+  predictions produced:  baseline=1,660  model=1,660
+
+── 8.2/8.3 Metrics ──
+  Baseline        MAE = 43.158  RMSE = 79.876
+  GB model (best) MAE = 7.471  RMSE = 9.772
+
+region         base_MAE  model_MAE   cfg
+Region 1         45.355      7.292     A
+Region 10        40.102      6.041     A
+Region 2         42.126      6.633     A
+Region 3         43.234      7.918     B
+Region 4         35.263      7.891     A
+Region 5         44.820      8.481     A
+Region 6         39.891      6.261     A
+Region 7         40.078      6.735     B
+Region 8         56.500      9.846     B
+Region 9         44.210      7.614     A
+
+── 8.4 Peak-hour errors per region ──
+   region           peak_hour  actual_kwh  baseline_pred  model_pred  baseline_abs_err  model_abs_err
+ Region 1 2026-09-28 11:00:00      835.61         565.27      797.97            270.34          37.64
+Region 10 2026-09-28 11:00:00      743.03         502.33      711.35            240.71          31.68
+ Region 2 2026-09-28 11:00:00      780.13         546.91      747.72            233.21          32.40
+ Region 3 2026-09-28 11:00:00      783.00         554.69      754.57            228.32          28.43
+ Region 4 2026-09-28 16:00:00      659.90         561.41      628.19             98.50          31.71
+ Region 5 2026-09-28 11:00:00      828.23         577.36      794.18            250.87          34.05
+ Region 6 2026-09-28 11:00:00      749.11         504.41      712.25            244.70          36.86
+ Region 7 2026-09-25 11:00:00      751.05         736.64      723.40             14.41          27.65
+ Region 8 2026-09-25 11:00:00     1016.55        1010.53      971.66              6.02          44.89
+ Region 9 2026-09-23 11:00:00      808.96         796.89      777.92             12.07          31.04
+
+figures and metrics saved to outputs/

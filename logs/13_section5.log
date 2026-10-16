@@ -1,0 +1,88 @@
+── 5.1 Daily network energy (kWh) ──
+       day   network_kwh
+2026-09-01 141195.236949
+2026-09-02 141533.898450
+2026-09-03 141938.491454
+2026-09-04 142301.475853
+2026-09-05 111680.476864
+2026-09-06 111950.736316
+2026-09-07 143598.744748
+2026-09-08 144126.999500
+2026-09-09 144519.795898
+2026-09-10 144818.079367
+2026-09-11 145348.886228
+2026-09-12 114025.490417
+2026-09-13 114264.085809
+2026-09-14 146611.634790
+2026-09-15 147144.618355
+2026-09-16 147508.121008
+2026-09-17 147968.920001
+2026-09-18 148320.196632
+2026-09-19 116242.445617
+2026-09-20 116493.001954
+2026-09-21 149552.722854
+2026-09-22 150056.527916
+2026-09-23 150430.650123
+2026-09-24 150800.610218
+2026-09-25 151190.779137
+2026-09-26 118623.963322
+2026-09-27 118993.599747
+2026-09-28 152464.157286
+
+── 5.1 Weekly network energy (7-day windows starting 1,8,15,22 Sep) ──
+  2026-09-01  →  2026-09-08       934,199.06 kWh
+  2026-09-08  →  2026-09-15       953,714.97 kWh
+  2026-09-15  →  2026-09-22       973,230.03 kWh
+  2026-09-22  →  2026-09-29       992,560.29 kWh
+
+── 5.1 Top 3 peak 15-min intervals (sum power_kw across all meters) ──
+               event_time    total_kw
+2026-09-28 13:00:00+02:00 7993.691474
+2026-09-28 12:45:00+02:00 7943.946545
+2026-09-28 13:15:00+02:00 7943.635736
+
+── 5.2 Energy by region (normalized per meter) ──
+   region  meters total_kwh per_meter_kwh
+ Region 8     400 503475.83      1258.690
+ Region 5     400 411040.39      1027.601
+ Region 9     400 400467.20      1001.168
+ Region 3     400 392376.59       980.941
+ Region 1     400 383539.81       958.850
+ Region 2     400 378448.89       946.122
+ Region 7     400 362288.54       905.721
+Region 10     400 351149.78       877.874
+ Region 6     400 346512.84       866.282
+ Region 4     400 324404.48       811.011
+
+── 5.2 Energy by customer_type (normalized per meter) ──
+customer_type  meters  total_kwh per_meter_kwh
+   industrial     406 2220672.04      5469.636
+   commercial    1010  825475.15       817.302
+  residential    2584  807557.16       312.522
+
+── 5.3 Completeness (network and per region) ──
+        Region 1  planned= 1,075,200  observed= 1,064,513  completeness=99.0060%
+       Region 10  planned= 1,075,200  observed= 1,064,415  completeness=98.9969%
+        Region 2  planned= 1,075,200  observed= 1,064,419  completeness=98.9973%
+        Region 3  planned= 1,075,200  observed= 1,064,327  completeness=98.9887%
+        Region 4  planned= 1,075,200  observed= 1,064,441  completeness=98.9993%
+        Region 5  planned= 1,075,200  observed= 1,064,290  completeness=98.9853%
+        Region 6  planned= 1,075,200  observed= 1,064,118  completeness=98.9693%
+        Region 7  planned= 1,075,200  observed= 1,064,237  completeness=98.9804%
+        Region 8  planned= 1,075,200  observed= 1,064,587  completeness=99.0129%
+        Region 9  planned= 1,075,200  observed= 1,064,388  completeness=98.9944%
+         network  planned=10,752,000  observed=10,643,735  completeness=98.9931%
+
+── 5.3 Daily 21 Sep: early vs full ──
+  all arrivals                                           149,552.72 kWh
+  early (received_time <= 2026-09-22 00:00+02)           149,400.54 kWh
+  difference                                                -152.18 kWh  (-0.1019% of full)
+
+── 5.4 Anomaly detection ──
+  flagged readings = 532,117
+  injected events  = 40
+  injected: 40   detected: 22   missed: 18
+  false flags: 531,911  (4.9976% of 10,643,261 outside readings)
+  meters with ≥1 false flag: 3594  (89.85% of fleet)
+
+figures saved to /Users/thierrys/Library/CloudStorage/OneDrive-Personal/Desktop/Dr Thierry/AUCA/Big Data Analytics/Assignment_I_October_2026/project/outputs

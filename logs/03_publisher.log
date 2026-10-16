@@ -1,0 +1,17 @@
+/Users/thierrys/Library/CloudStorage/OneDrive-Personal/Desktop/Dr Thierry/AUCA/Big Data Analytics/Assignment_I_October_2026/project/code/03_pilot_publisher.py:33: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cl = mqtt.Client(client_id="pilot_publisher", clean_session=True)
+publisher connected rc=0
+  queued 200  acked 0
+  queued 400  acked 0
+  queued 600  acked 0
+  queued 800  acked 0
+  queued 1,000  acked 0
+  queued 1,200  acked 0
+  queued 1,400  acked 0
+  queued 1,600  acked 0
+  queued 1,800  acked 0
+  queued 2,000  acked 0
+
+queued 2,000 — waiting for broker ACKs ...
+
+FINAL  generator_dicts=2,000  publish_queued=2,000  broker_acked=2,000  duration=0.15s

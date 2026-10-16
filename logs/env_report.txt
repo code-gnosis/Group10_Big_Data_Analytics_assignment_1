@@ -1,0 +1,47 @@
+═══════════════════════════════════════════════════════════════════════
+  AUCA MSDA9215 Assignment I — Section 1.1 Environment Report
+  Host clock: 2026-10-12 10:16:44 CAT
+═══════════════════════════════════════════════════════════════════════
+
+[1] Host hardware
+    CPU model : Apple M4
+    Cores     : 10 physical / 10 logical
+    RAM       : 16 GB
+    Storage   : Apple Fabric
+    Free disk : 185Gi on /
+
+[2] OS
+    macOS 26.6.2 (build 25G83)
+    uname     : Darwin 25.6.0 arm64
+
+[3] Software versions
+    Python    : Python 3.14.7
+    Docker    : Docker version 29.7.2, build a7dcaa6
+    EMQX      : 5.7.2 (container auca_emqx)
+PostgreSQL : 16.15
+TimescaleDB: 2.30.2
+
+[4] PostgreSQL deployment mode
+    Mode      : Docker container (TimescaleDB image)
+    Image     : timescale/timescaledb:latest-pg16
+    CPU/RAM   : Docker Desktop defaults (no explicit limits set)
+
+[5] PostgreSQL memory/parallelism settings
+              name               | setting | unit 
+---------------------------------+---------+------
+ jit                             | off     | 
+ max_parallel_workers_per_gather | 5       | 
+ shared_buffers                  | 253824  | 8kB
+ work_mem                        | 6347    | kB
+(4 rows)
+
+[6] Assignment database verification
+     db      |  session_tz   |           now_cat            
+-------------+---------------+------------------------------
+ energy_grid | Africa/Kigali | 2026-10-12 10:16:44.69177+02
+(1 row)
+
+[7] EMQX broker reachable?
+Node 'emqx@172.19.0.2' 5.7.2 is started
+
+Done.

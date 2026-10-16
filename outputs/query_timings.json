@@ -1,0 +1,84 @@
+{
+  "client": "psycopg2+libpq_perf_counter",
+  "machine": "Thierry_M4_16GB",
+  "session_seconds": 21.96840895799687,
+  "runs": 5,
+  "warmup": 1,
+  "summary": {
+    "Q1/energy_readings": {
+      "median_ms": 27.613,
+      "min_ms": 23.235,
+      "max_ms": 35.163
+    },
+    "Q1/energy_readings_3h": {
+      "median_ms": 19.075,
+      "min_ms": 17.594,
+      "max_ms": 21.125
+    },
+    "Q1/energy_readings_week": {
+      "median_ms": 23.786,
+      "min_ms": 22.992,
+      "max_ms": 26.307
+    },
+    "Q2/energy_readings": {
+      "median_ms": 68.896,
+      "min_ms": 62.633,
+      "max_ms": 80.738
+    },
+    "Q2/energy_readings_3h": {
+      "median_ms": 71.339,
+      "min_ms": 59.498,
+      "max_ms": 83.995
+    },
+    "Q2/energy_readings_week": {
+      "median_ms": 81.879,
+      "min_ms": 75.519,
+      "max_ms": 89.687
+    },
+    "Q3/energy_readings": {
+      "median_ms": 348.599,
+      "min_ms": 323.725,
+      "max_ms": 398.21
+    },
+    "Q3/energy_readings_3h": {
+      "median_ms": 1195.106,
+      "min_ms": 1135.775,
+      "max_ms": 1644.494
+    },
+    "Q3/energy_readings_week": {
+      "median_ms": 338.862,
+      "min_ms": 326.143,
+      "max_ms": 521.258
+    },
+    "Q4/energy_readings": {
+      "median_ms": 0.771,
+      "min_ms": 0.754,
+      "max_ms": 1.139
+    },
+    "Q4/energy_readings_3h": {
+      "median_ms": 1.896,
+      "min_ms": 1.665,
+      "max_ms": 1.958
+    },
+    "Q4/energy_readings_week": {
+      "median_ms": 0.537,
+      "min_ms": 0.495,
+      "max_ms": 0.604
+    },
+    "Q5/energy_readings": {
+      "median_ms": 240.319,
+      "min_ms": 238.062,
+      "max_ms": 315.29
+    },
+    "Q5/energy_readings_3h": {
+      "median_ms": 251.571,
+      "min_ms": 246.979,
+      "max_ms": 274.62
+    },
+    "Q5/energy_readings_week": {
+      "median_ms": 277.581,
+      "min_ms": 263.014,
+      "max_ms": 290.741
+    }
+  }
+}

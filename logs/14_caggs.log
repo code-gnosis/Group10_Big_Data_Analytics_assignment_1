@@ -1,0 +1,77 @@
+SET
+DROP MATERIALIZED VIEW
+NOTICE:  materialized view "cagg_15m_region" does not exist, skipping
+NOTICE:  materialized view "cagg_hour_region" does not exist, skipping
+DROP MATERIALIZED VIEW
+NOTICE:  materialized view "cagg_day_meter" does not exist, skipping
+DROP MATERIALIZED VIEW
+CREATE MATERIALIZED VIEW
+CREATE MATERIALIZED VIEW
+CREATE MATERIALIZED VIEW
+--- Views created, measuring initial refresh ---
+Timing is on.
+CALL
+Time: 11582.407 ms (00:11.582)
+CALL
+Time: 6027.273 ms (00:06.027)
+CALL
+Time: 2550.365 ms (00:02.550)
+Timing is off.
+
+--- Sample rows from each ---
+         bucket         |  region  |     energy_kwh     | reading_count 
+------------------------+----------+--------------------+---------------
+ 2026-09-01 00:00:00+02 | Region 9 | 116.19389027000001 |           397
+ 2026-09-01 00:00:00+02 | Region 8 |       152.51866077 |           396
+ 2026-09-01 00:00:00+02 | Region 7 |  99.09898970999993 |           395
+(3 rows)
+
+         bucket         |  region  |     energy_kwh     | reading_count 
+------------------------+----------+--------------------+---------------
+ 2026-09-01 00:00:00+02 | Region 9 |  454.7352892099992 |          1588
+ 2026-09-01 00:00:00+02 | Region 8 |  602.7157666600004 |          1588
+ 2026-09-01 00:00:00+02 | Region 7 | 393.89379458999986 |          1592
+(3 rows)
+
+         bucket         |  meter_id  |     energy_kwh     | reading_count 
+------------------------+------------+--------------------+---------------
+ 2026-08-31 02:00:00+02 | 1000000000 |         0.29351416 |             8
+ 2026-08-31 02:00:00+02 | 1000000001 | 0.4604161000000001 |             8
+ 2026-08-31 02:00:00+02 | 1000000002 |         0.50528015 |             8
+(3 rows)
+
+
+--- Materialized sizes ---
+    view_name     | size  
+------------------+-------
+ cagg_15m_region  | 24 kB
+ cagg_day_meter   | 16 kB
+ cagg_hour_region | 24 kB
+(3 rows)
+
+
+--- Add refresh policies (3-day lookback, 1h end offset, 15-min schedule) ---
+ add_continuous_aggregate_policy 
+---------------------------------
+                            1002
+(1 row)
+
+ add_continuous_aggregate_policy 
+---------------------------------
+                            1003
+(1 row)
+
+ add_continuous_aggregate_policy 
+---------------------------------
+                            1004
+(1 row)
+
+
+--- Background jobs ---
+ job_id |              application_name              | schedule_interval | scheduled 
+--------+--------------------------------------------+-------------------+-----------
+   1002 | Refresh Continuous Aggregate Policy [1002] | 00:15:00          | t
+   1003 | Refresh Continuous Aggregate Policy [1003] | 00:15:00          | t
+   1004 | Refresh Continuous Aggregate Policy [1004] | 00:15:00          | t
+(3 rows)
+

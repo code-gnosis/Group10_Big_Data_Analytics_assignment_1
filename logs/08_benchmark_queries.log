@@ -1,0 +1,44 @@
+  Q1 / energy_readings        done
+  Q1 / energy_readings_3h     done
+  Q1 / energy_readings_week   done
+  Q2 / energy_readings        done
+  Q2 / energy_readings_3h     done
+  Q2 / energy_readings_week   done
+  Q3 / energy_readings        done
+  Q3 / energy_readings_3h     done
+  Q3 / energy_readings_week   done
+  Q4 / energy_readings        done
+  Q4 / energy_readings_3h     done
+  Q4 / energy_readings_week   done
+  Q5 / energy_readings        done
+  Q5 / energy_readings_3h     done
+  Q5 / energy_readings_week   done
+
+── Query timings (ms, warm-cache) ──
+client=psycopg2+libpq_perf_counter  machine=Thierry_M4_16GB  session_seconds=22.0
+query table                      median        min        max
+Q1   energy_readings            27.613     23.235     35.163
+Q1   energy_readings_3h         19.075     17.594     21.125
+Q1   energy_readings_week       23.786     22.992     26.307
+Q2   energy_readings            68.896     62.633     80.738
+Q2   energy_readings_3h         71.339     59.498     83.995
+Q2   energy_readings_week       81.879     75.519     89.687
+Q3   energy_readings           348.599    323.725    398.210
+Q3   energy_readings_3h       1195.106   1135.775   1644.494
+Q3   energy_readings_week      338.862    326.143    521.258
+Q4   energy_readings             0.771      0.754      1.139
+Q4   energy_readings_3h          1.896      1.665      1.958
+Q4   energy_readings_week        0.537      0.495      0.604
+Q5   energy_readings           240.319    238.062    315.290
+Q5   energy_readings_3h        251.571    246.979    274.620
+Q5   energy_readings_week      277.581    263.014    290.741
+
+── Median comparison (ms) ──
+query        energy_readings     energy_readings_3h   energy_readings_week
+Q1                   27.613                19.075*                 23.786
+Q2                  68.896*                 71.339                 81.879
+Q3                  348.599               1195.106               338.862*
+Q4                    0.771                  1.896                 0.537*
+Q5                 240.319*                251.571                277.581
+
+* fastest median per row

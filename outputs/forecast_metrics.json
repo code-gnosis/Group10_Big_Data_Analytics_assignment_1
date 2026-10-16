@@ -1,0 +1,25 @@
+{
+  "baseline": {
+    "mae": 43.15791965709639,
+    "rmse": 79.8761028775427
+  },
+  "model": {
+    "mae": 7.47125893224011,
+    "rmse": 9.771706472998282
+  },
+  "configs": [
+    {
+      "id": "A",
+      "n_estimators": 200,
+      "max_depth": 3,
+      "learning_rate": 0.05
+    },
+    {
+      "id": "B",
+      "n_estimators": 400,
+      "max_depth": 5,
+      "learning_rate": 0.03
+    }
+  ],
+  "test_predictions_total": 1660
+}

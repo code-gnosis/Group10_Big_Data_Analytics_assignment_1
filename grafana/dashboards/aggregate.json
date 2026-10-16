@@ -1,0 +1,45 @@
+{
+  "uid": "agg-dash",
+  "title": "Aggregate",
+  "schemaVersion": 39,
+  "version": 1,
+  "editable": true,
+  "time": {"from": "2026-09-22T00:00:00+02:00", "to": "2026-09-29T00:00:00+02:00"},
+  "panels": [
+    {
+      "id": 1, "type": "timeseries", "title": "Hourly regional energy (kWh)",
+      "gridPos": {"x": 0, "y": 0, "w": 12, "h": 8},
+      "fieldConfig": {"defaults": {"unit": "kwatth"}},
+      "datasource": {"type": "postgres", "uid": "timescaledb"},
+      "targets": [{"rawSql": "SELECT bucket AS time, region, energy_kwh FROM cagg_hour_region WHERE $__timeFilter(bucket) ORDER BY bucket, region", "format": "time_series"}]
+    },
+    {
+      "id": 2, "type": "timeseries", "title": "Daily network energy (kWh)",
+      "gridPos": {"x": 12, "y": 0, "w": 12, "h": 8},
+      "fieldConfig": {"defaults": {"unit": "kwatth"}},
+      "datasource": {"type": "postgres", "uid": "timescaledb"},
+      "targets": [{"rawSql": "SELECT time_bucket('1 day', bucket) AS time, SUM(energy_kwh) FROM cagg_15m_region WHERE $__timeFilter(bucket) GROUP BY 1 ORDER BY 1", "format": "time_series"}]
+    },
+    {
+      "id": 3, "type": "bargauge", "title": "7-day network energy (periods starting 1,8,15,22 Sep)",
+      "gridPos": {"x": 0, "y": 8, "w": 12, "h": 8},
+      "fieldConfig": {"defaults": {"unit": "kwatth"}},
+      "datasource": {"type": "postgres", "uid": "timescaledb"},
+      "targets": [{"rawSql": "WITH w(s) AS (VALUES ('2026-09-01'::date),('2026-09-08'::date),('2026-09-15'::date),('2026-09-22'::date)) SELECT to_char(w.s,'YYYY-MM-DD') AS week_start, SUM(c.energy_kwh) AS kwh FROM w LEFT JOIN cagg_15m_region c ON c.bucket >= w.s::timestamptz AND c.bucket < (w.s+7)::timestamptz GROUP BY w.s ORDER BY w.s", "format": "table"}]
+    },
+    {
+      "id": 4, "type": "timeseries", "title": "Daily energy — meter 1000000000",
+      "gridPos": {"x": 12, "y": 8, "w": 12, "h": 8},
+      "fieldConfig": {"defaults": {"unit": "kwatth"}},
+      "datasource": {"type": "postgres", "uid": "timescaledb"},
+      "targets": [{"rawSql": "SELECT bucket AS time, energy_kwh FROM cagg_day_meter WHERE meter_id = 1000000000 AND $__timeFilter(bucket) ORDER BY bucket", "format": "time_series"}]
+    },
+    {
+      "id": 5, "type": "bargauge", "title": "Completeness by region (%)",
+      "gridPos": {"x": 0, "y": 16, "w": 24, "h": 8},
+      "fieldConfig": {"defaults": {"unit": "percent", "min": 95, "max": 100}},
+      "datasource": {"type": "postgres", "uid": "timescaledb"},
+      "targets": [{"rawSql": "WITH rc AS (SELECT m.region, COUNT(DISTINCT m.meter_id) AS meters FROM meters m GROUP BY m.region), days AS (SELECT EXTRACT(EPOCH FROM ($__timeTo()::timestamptz - $__timeFrom()::timestamptz))/86400 AS n), obs AS (SELECT region, SUM(reading_count) AS n FROM cagg_15m_region WHERE $__timeFilter(bucket) GROUP BY region) SELECT rc.region, 100.0 * obs.n / (rc.meters * (SELECT n FROM days) * 96) AS pct FROM rc JOIN obs USING (region) ORDER BY rc.region", "format": "table"}]
+    }
+  ]
+}

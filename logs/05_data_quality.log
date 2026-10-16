@@ -1,0 +1,25 @@
+SET
+SET
+ planned_readings | emitted_readings | unique_readings | duplicate_readings | delayed_unique_readings | missing_readings | missing_pct | duplicate_pct | delayed_pct | completeness_pct 
+------------------+------------------+-----------------+--------------------+-------------------------+------------------+-------------+---------------+-------------+------------------
+         10752000 |         10696848 |        10643735 |              53113 |                  213090 |           108265 |      1.0069 |        0.4990 |      2.0020 |          98.9931
+(1 row)
+
+
+--- Checks (both must be TRUE) ---
+ unique_plus_extras_equals_emitted | planned_minus_unique_equals_missing 
+-----------------------------------+-------------------------------------
+ t                                 | t
+(1 row)
+
+
+--- Top 5 meters with most missing readings ---
+  meter_id  |  region   | customer_type | missing_readings 
+------------+-----------+---------------+------------------
+ 1000003622 | Region 3  | commercial    |               47
+ 1000000106 | Region 7  | industrial    |               45
+ 1000000366 | Region 7  | commercial    |               45
+ 1000001259 | Region 10 | residential   |               44
+ 1000000189 | Region 10 | commercial    |               43
+(5 rows)
+

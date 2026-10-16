@@ -1,0 +1,51 @@
+dataset_info() reports planned=10,752,000  expected_emitted=10,696,848
+
+Phase 1 — generating CSV ...
+     500,000  (296,379 rows/s, 1.7s elapsed)
+   1,000,000  (300,022 rows/s, 3.3s elapsed)
+   1,500,000  (301,461 rows/s, 5.0s elapsed)
+   2,000,000  (301,437 rows/s, 6.6s elapsed)
+   2,500,000  (301,766 rows/s, 8.3s elapsed)
+   3,000,000  (302,060 rows/s, 9.9s elapsed)
+   3,500,000  (302,226 rows/s, 11.6s elapsed)
+   4,000,000  (302,190 rows/s, 13.2s elapsed)
+   4,500,000  (302,076 rows/s, 14.9s elapsed)
+   5,000,000  (301,720 rows/s, 16.6s elapsed)
+   5,500,000  (301,041 rows/s, 18.3s elapsed)
+   6,000,000  (300,376 rows/s, 20.0s elapsed)
+   6,500,000  (299,095 rows/s, 21.7s elapsed)
+   7,000,000  (298,820 rows/s, 23.4s elapsed)
+   7,500,000  (298,491 rows/s, 25.1s elapsed)
+   8,000,000  (298,085 rows/s, 26.8s elapsed)
+   8,500,000  (297,774 rows/s, 28.5s elapsed)
+   9,000,000  (297,493 rows/s, 30.3s elapsed)
+   9,500,000  (297,173 rows/s, 32.0s elapsed)
+  10,000,000  (297,026 rows/s, 33.7s elapsed)
+  10,500,000  (296,438 rows/s, 35.4s elapsed)
+Phase 1 done — 10,696,848 rows in 36.1s (1.16 GB)
+
+Phase 2 — COPY into energy_readings ...
+Phase 2 done — load took 42.6s
+
+Phase 3 — verification queries
+
+── Reconciliation ──
+  expected emitted_readings : 10,696,848
+  dicts consumed            : 10,696,848
+  CSV data rows             : 10,696,848
+  energy_readings rows      : 10,696,848
+  all four match?           : YES ✓
+
+── Timing (CSV route) ──
+  CSV generation            :     36.1 s
+  COPY load                 :     42.6 s
+  Total (gen → final commit):     80.4 s
+
+── Database checks ──
+  distinct meters           : 4,000
+  earliest event_time       : 2026-09-01 00:00:00+02:00
+  latest   event_time       : 2026-09-28 23:45:00+02:00
+  hypertable total size     : 1042 MB
+  sum of chunk total_bytes  : 1042 MB
+  sum of chunk table_bytes  : 958 MB
+  sum of chunk index_bytes  : 85 MB

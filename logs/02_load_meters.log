@@ -1,0 +1,19 @@
+generator returned 4,000 meters
+inserted in 0.17s -> COUNT(*) = 4,000
+
+by region:
+  Region 1      400
+  Region 10     400
+  Region 2      400
+  Region 3      400
+  Region 4      400
+  Region 5      400
+  Region 6      400
+  Region 7      400
+  Region 8      400
+  Region 9      400
+
+by customer_type:
+  commercial    1010
+  industrial    406
+  residential   2584

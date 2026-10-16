@@ -1,0 +1,23 @@
+  Q1/energy_readings          median=  22.36 ms
+  Q1/energy_time_compressed   median=  22.67 ms
+  Q1/energy_meter_compressed  median= 154.36 ms
+  Q2/energy_readings          median=  58.25 ms
+  Q2/energy_time_compressed   median=  47.34 ms
+  Q2/energy_meter_compressed  median=  29.95 ms
+  Q3/energy_readings          median= 324.28 ms
+  Q3/energy_time_compressed   median=  69.90 ms
+  Q3/energy_meter_compressed  median=  56.53 ms
+  Q4/energy_readings          median=   0.80 ms
+  Q4/energy_time_compressed   median=  15.34 ms
+  Q4/energy_meter_compressed  median=   0.86 ms
+  Q5/energy_readings          median= 193.47 ms
+  Q5/energy_time_compressed   median=  69.60 ms
+  Q5/energy_meter_compressed  median=  79.79 ms
+
+── Section 4.3 comparison (median ms, warm cache) ──
+q     baseline_1d    time_comp   meter_comp   %impr_time  %impr_meter
+Q1          22.36        22.67       154.36         -1.4       -590.5
+Q2          58.25        47.34        29.95         18.7         48.6
+Q3         324.28        69.90        56.53         78.4         82.6
+Q4           0.80        15.34         0.86      -1820.1         -7.5
+Q5         193.47        69.60        79.79         64.0         58.8

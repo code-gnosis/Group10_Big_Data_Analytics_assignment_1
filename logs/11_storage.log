@@ -1,0 +1,30 @@
+SET
+--- Row count & data checks (must still match baseline) ---
+           tbl           |   rows   |    sum_e    |    sum_p     
+-------------------------+----------+-------------+--------------
+ energy_meter_compressed | 10643735 | 3853704.347 | 15414817.388
+ energy_time_compressed  | 10643735 | 3853704.347 | 15414817.388
+ energy_readings         | 10643735 | 3853704.347 | 15414817.388
+(3 rows)
+
+
+--- Chunk compression status ---
+     hypertable_name     | total_chunks | compressed_chunks 
+-------------------------+--------------+-------------------
+ energy_meter_compressed |           29 |                29
+ energy_readings         |           29 |                 0
+ energy_time_compressed  |           29 |                29
+(3 rows)
+
+
+--- Storage sizes (bytes) ---
+
+--- Compression ratios vs baseline (energy_readings 1-day) ---
+ERROR:  column "compressed_total_bytes" does not exist
+LINE 5:        pg_size_pretty(SUM(compressed_total_bytes)) AS compre...
+                                  ^
+ baseline | time_only | meter_seg | ratio_time | ratio_meter | saved_pct_time | saved_pct_meter 
+----------+-----------+-----------+------------+-------------+----------------+-----------------
+ 1364 MB  | 439 MB    | 502 MB    |       3.11 |        2.72 |          67.83 |           63.21
+(1 row)
+

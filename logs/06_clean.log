@@ -1,0 +1,41 @@
+SET
+--- BEFORE cleaning ---
+ row_count_before | sum_energy_kwh_before 
+------------------+-----------------------
+         10696848 |          3872863.8932
+(1 row)
+
+
+--- Conflicting duplicates (same key, different values) — expect 0 ---
+ conflicting_pairs 
+-------------------
+                 0
+(1 row)
+
+
+--- Running DELETE (keep one per all-8-column identical group) ---
+BEGIN
+DELETE 53113
+COMMIT
+
+--- AFTER cleaning ---
+ row_count_after | sum_energy_kwh_after 
+-----------------+----------------------
+        10643735 |         3853704.3468
+(1 row)
+
+
+--- Final verification ---
+ final_rows | expected_unique_readings | rows_match_spec 
+------------+--------------------------+-----------------
+   10643735 |                 10643735 | t
+(1 row)
+
+
+--- Any duplicate (meter_id, event_time) pairs left? Expect 0 ---
+ remaining_duplicate_pairs 
+---------------------------
+                         0
+(1 row)
+
+ANALYZE

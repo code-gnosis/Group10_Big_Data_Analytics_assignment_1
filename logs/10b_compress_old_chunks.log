@@ -1,0 +1,67 @@
+re-using cutoff 2026-10-10T10:29:28.812675+02:00
+
+energy_time_compressed: 29 chunks
+  compressed  _timescaledb_internal._hyper_4_260_chunk                                  66.5 ms
+  compressed  _timescaledb_internal._hyper_4_261_chunk                                 250.3 ms
+  compressed  _timescaledb_internal._hyper_4_264_chunk                                 234.2 ms
+  compressed  _timescaledb_internal._hyper_4_266_chunk                                 209.7 ms
+  compressed  _timescaledb_internal._hyper_4_268_chunk                                 217.1 ms
+  compressed  _timescaledb_internal._hyper_4_270_chunk                                 215.0 ms
+  compressed  _timescaledb_internal._hyper_4_272_chunk                                 222.1 ms
+  compressed  _timescaledb_internal._hyper_4_274_chunk                                 220.5 ms
+  compressed  _timescaledb_internal._hyper_4_276_chunk                                 223.2 ms
+  compressed  _timescaledb_internal._hyper_4_278_chunk                                 208.8 ms
+  compressed  _timescaledb_internal._hyper_4_280_chunk                                 216.3 ms
+  compressed  _timescaledb_internal._hyper_4_282_chunk                                 195.2 ms
+  compressed  _timescaledb_internal._hyper_4_284_chunk                                 200.9 ms
+  compressed  _timescaledb_internal._hyper_4_286_chunk                                 186.3 ms
+  compressed  _timescaledb_internal._hyper_4_288_chunk                                 232.2 ms
+  compressed  _timescaledb_internal._hyper_4_290_chunk                                 195.0 ms
+  compressed  _timescaledb_internal._hyper_4_292_chunk                                 206.7 ms
+  compressed  _timescaledb_internal._hyper_4_294_chunk                                 204.4 ms
+  compressed  _timescaledb_internal._hyper_4_296_chunk                                 202.5 ms
+  compressed  _timescaledb_internal._hyper_4_298_chunk                                 202.1 ms
+  compressed  _timescaledb_internal._hyper_4_300_chunk                                 215.7 ms
+  compressed  _timescaledb_internal._hyper_4_302_chunk                                 234.7 ms
+  compressed  _timescaledb_internal._hyper_4_304_chunk                                 216.5 ms
+  compressed  _timescaledb_internal._hyper_4_306_chunk                                 185.0 ms
+  compressed  _timescaledb_internal._hyper_4_308_chunk                                 203.8 ms
+  compressed  _timescaledb_internal._hyper_4_310_chunk                                 216.1 ms
+  compressed  _timescaledb_internal._hyper_4_312_chunk                                 230.9 ms
+  compressed  _timescaledb_internal._hyper_4_314_chunk                                 204.9 ms
+  compressed  _timescaledb_internal._hyper_4_316_chunk                                 180.2 ms
+
+energy_meter_compressed: 29 chunks
+  compressed  _timescaledb_internal._hyper_5_262_chunk                                 310.4 ms
+  compressed  _timescaledb_internal._hyper_5_263_chunk                                 674.3 ms
+  compressed  _timescaledb_internal._hyper_5_265_chunk                                 623.9 ms
+  compressed  _timescaledb_internal._hyper_5_267_chunk                                 633.0 ms
+  compressed  _timescaledb_internal._hyper_5_269_chunk                                 656.3 ms
+  compressed  _timescaledb_internal._hyper_5_271_chunk                                 659.4 ms
+  compressed  _timescaledb_internal._hyper_5_273_chunk                                 628.5 ms
+  compressed  _timescaledb_internal._hyper_5_275_chunk                                 614.3 ms
+  compressed  _timescaledb_internal._hyper_5_277_chunk                                 613.7 ms
+  compressed  _timescaledb_internal._hyper_5_279_chunk                                 632.6 ms
+  compressed  _timescaledb_internal._hyper_5_281_chunk                                 651.8 ms
+  compressed  _timescaledb_internal._hyper_5_283_chunk                                 689.7 ms
+  compressed  _timescaledb_internal._hyper_5_285_chunk                                 686.4 ms
+  compressed  _timescaledb_internal._hyper_5_287_chunk                                 684.5 ms
+  compressed  _timescaledb_internal._hyper_5_289_chunk                                 654.8 ms
+  compressed  _timescaledb_internal._hyper_5_291_chunk                                 616.8 ms
+  compressed  _timescaledb_internal._hyper_5_293_chunk                                 633.1 ms
+  compressed  _timescaledb_internal._hyper_5_295_chunk                                 658.3 ms
+  compressed  _timescaledb_internal._hyper_5_297_chunk                                 630.5 ms
+  compressed  _timescaledb_internal._hyper_5_299_chunk                                 676.4 ms
+  compressed  _timescaledb_internal._hyper_5_301_chunk                                 623.8 ms
+  compressed  _timescaledb_internal._hyper_5_303_chunk                                 709.5 ms
+  compressed  _timescaledb_internal._hyper_5_305_chunk                                 782.9 ms
+  compressed  _timescaledb_internal._hyper_5_307_chunk                                 639.7 ms
+  compressed  _timescaledb_internal._hyper_5_309_chunk                                 608.6 ms
+  compressed  _timescaledb_internal._hyper_5_311_chunk                                 628.5 ms
+  compressed  _timescaledb_internal._hyper_5_313_chunk                                 705.2 ms
+  compressed  _timescaledb_internal._hyper_5_315_chunk                                 689.5 ms
+  compressed  _timescaledb_internal._hyper_5_317_chunk                                 663.9 ms
+
+── Compression summary ──
+energy_time_compressed        chunks_compressed= 29  total=6.00s  avg=206.8ms/chunk
+energy_meter_compressed       chunks_compressed= 29  total=18.68s  avg=644.2ms/chunk

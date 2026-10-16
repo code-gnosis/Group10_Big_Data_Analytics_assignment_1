@@ -1,0 +1,11 @@
+{
+  "cutoff": "2026-10-10T10:29:28.812675+02:00",
+  "load_sec_time_only": 27.903633830021136,
+  "load_sec_meter_segmented": 26.218232707993593,
+  "compress_sec_time_only": 5.996905121952295,
+  "compress_sec_meter_segmented": 18.680736454029102,
+  "chunks_compressed_time_only": 29,
+  "chunks_compressed_meter_segmented": 29,
+  "policy_time": 1000,
+  "policy_meter": 1001
+}

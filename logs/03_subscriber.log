@@ -1,0 +1,17 @@
+/Users/thierrys/Library/CloudStorage/OneDrive-Personal/Desktop/Dr Thierry/AUCA/Big Data Analytics/Assignment_I_October_2026/project/code/03_pilot_subscriber.py:70: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
+  cl = mqtt.Client(client_id="pilot_subscriber", clean_session=True)
+subscriber listening — Ctrl+C to stop
+on_connect rc=0  subscribe → energy/meters/#
+  received 200  inserted 0
+  received 400  inserted 0
+  received 600  inserted 500
+  received 800  inserted 500
+  received 1,000  inserted 1,000
+  received 1,200  inserted 1,000
+  received 1,400  inserted 1,000
+  received 1,600  inserted 1,500
+  received 1,800  inserted 1,500
+  received 2,000  inserted 2,000
+
+FINAL  received=2,000  inserted=2,000  duration=5.16s
+energy_live row count = 2,000

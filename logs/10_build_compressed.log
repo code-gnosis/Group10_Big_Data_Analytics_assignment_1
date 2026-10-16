@@ -1,0 +1,36 @@
+experiment_start   = 2026-10-12T10:29:28+02:00
+cutoff (now-48h)   = 2026-10-10T10:29:28+02:00
+policies added and paused: time=1000 meter=1001
+loading 28 day-chunks ...
+  2026-09-01  loaded+compressed  [t=0.80s comp=0.00s | m=0.99s comp=0.00s]
+  2026-09-02  loaded+compressed  [t=1.18s comp=0.00s | m=1.07s comp=0.00s]
+  2026-09-03  loaded+compressed  [t=1.01s comp=0.00s | m=0.96s comp=0.00s]
+  2026-09-04  loaded+compressed  [t=0.93s comp=0.00s | m=0.97s comp=0.00s]
+  2026-09-05  loaded+compressed  [t=1.22s comp=0.00s | m=1.00s comp=0.00s]
+  2026-09-06  loaded+compressed  [t=1.04s comp=0.00s | m=0.97s comp=0.00s]
+  2026-09-07  loaded+compressed  [t=1.12s comp=0.00s | m=0.97s comp=0.00s]
+  2026-09-08  loaded+compressed  [t=1.13s comp=0.00s | m=0.94s comp=0.00s]
+  2026-09-09  loaded+compressed  [t=0.92s comp=0.00s | m=1.14s comp=0.00s]
+  2026-09-10  loaded+compressed  [t=0.96s comp=0.00s | m=0.91s comp=0.00s]
+  2026-09-11  loaded+compressed  [t=0.95s comp=0.00s | m=0.89s comp=0.00s]
+  2026-09-12  loaded+compressed  [t=1.11s comp=0.00s | m=0.87s comp=0.00s]
+  2026-09-13  loaded+compressed  [t=1.02s comp=0.00s | m=0.80s comp=0.00s]
+  2026-09-14  loaded+compressed  [t=1.05s comp=0.00s | m=0.94s comp=0.00s]
+  2026-09-15  loaded+compressed  [t=0.90s comp=0.00s | m=0.86s comp=0.00s]
+  2026-09-16  loaded+compressed  [t=0.88s comp=0.00s | m=0.86s comp=0.00s]
+  2026-09-17  loaded+compressed  [t=0.95s comp=0.00s | m=0.92s comp=0.00s]
+  2026-09-18  loaded+compressed  [t=0.90s comp=0.00s | m=0.82s comp=0.00s]
+  2026-09-19  loaded+compressed  [t=0.81s comp=0.00s | m=0.74s comp=0.00s]
+  2026-09-20  loaded+compressed  [t=0.99s comp=0.00s | m=0.86s comp=0.00s]
+  2026-09-21  loaded+compressed  [t=1.00s comp=0.00s | m=0.78s comp=0.00s]
+  2026-09-22  loaded+compressed  [t=0.87s comp=0.01s | m=1.05s comp=0.00s]
+  2026-09-23  loaded+compressed  [t=1.16s comp=0.00s | m=0.95s comp=0.00s]
+  2026-09-24  loaded+compressed  [t=0.92s comp=0.00s | m=0.83s comp=0.00s]
+  2026-09-25  loaded+compressed  [t=0.97s comp=0.00s | m=1.27s comp=0.00s]
+  2026-09-26  loaded+compressed  [t=1.15s comp=0.00s | m=1.06s comp=0.00s]
+  2026-09-27  loaded+compressed  [t=0.96s comp=0.00s | m=0.82s comp=0.00s]
+  2026-09-28  loaded+compressed  [t=1.01s comp=0.00s | m=0.99s comp=0.00s]
+
+── Totals ──
+time-only  load:     27.90s   compress: 0.04s  (28 chunks)
+meter-seg  load:     26.22s   compress: 0.01s  (28 chunks)

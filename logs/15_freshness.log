@@ -1,0 +1,70 @@
+SET
+NOTICE:  materialized view "test_hourly_cagg" does not exist, skipping
+DROP MATERIALIZED VIEW
+DROP TABLE
+NOTICE:  table "test_hypertable" does not exist, skipping
+CREATE TABLE
+      create_hypertable       
+------------------------------
+ (9,public,test_hypertable,t)
+(1 row)
+
+CREATE MATERIALIZED VIEW
+--- Record timestamps ---
+           test_time           |           h            |       h_minus_48       
+-------------------------------+------------------------+------------------------
+ 2026-10-12 10:38:30.375608+02 | 2026-10-12 09:00:00+02 | 2026-10-10 09:00:00+02
+(1 row)
+
+
+--- Stage 1: insert 1 kWh into older hour, manual refresh ONLY that hour ---
+INSERT 0 1
+CALL
+Older hour aggregate after Stage 1 (expect 1 kWh, 1 row):
+         bucket         | energy_kwh | rows 
+------------------------+------------+------
+ 2026-10-10 09:00:00+02 |          1 |    1
+(1 row)
+
+Hour H aggregate after Stage 1 (expect no row):
+ bucket | energy_kwh | rows 
+--------+------------+------
+(0 rows)
+
+
+--- Stage 2: insert +0.5 kWh older, +2 kWh H ---
+INSERT 0 2
+Raw table after inserts:
+         bucket         | raw_e | raw_rows 
+------------------------+-------+----------
+ 2026-10-10 09:00:00+02 |   1.5 |        2
+ 2026-10-12 09:00:00+02 |     2 |        1
+(2 rows)
+
+Aggregate (real-time OFF, no refresh yet) — expect 1 kWh older + no H row:
+         bucket         | energy_kwh | rows 
+------------------------+------------+------
+ 2026-10-10 09:00:00+02 |          1 |    1
+(1 row)
+
+
+--- Stage 3: enable real-time aggregation ---
+ALTER MATERIALIZED VIEW
+Aggregate (real-time ON, no refresh yet) — expect 1 kWh older, 2 kWh H:
+         bucket         | energy_kwh | rows 
+------------------------+------------+------
+ 2026-10-10 09:00:00+02 |          1 |    1
+ 2026-10-12 09:00:00+02 |          2 |    1
+(2 rows)
+
+
+--- Stage 4: manual refresh both complete hours ---
+CALL
+CALL
+Final aggregate (expect 1.5 kWh/2 rows older; 2 kWh/1 row H):
+         bucket         | energy_kwh | rows 
+------------------------+------------+------
+ 2026-10-10 09:00:00+02 |        1.5 |    2
+ 2026-10-12 09:00:00+02 |          2 |    1
+(2 rows)
+

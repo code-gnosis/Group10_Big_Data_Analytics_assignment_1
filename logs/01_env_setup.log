@@ -1,0 +1,12 @@
+NOTICE:  database "energy_grid" does not exist, skipping
+DROP DATABASE
+CREATE DATABASE
+You are now connected to database "energy_grid" as user "auca".
+CREATE EXTENSION
+ALTER DATABASE
+SET
+     db      |  session_tz   | timescaledb_version |                                        postgres_version                                        
+-------------+---------------+---------------------+------------------------------------------------------------------------------------------------
+ energy_grid | Africa/Kigali | 2.30.2              | PostgreSQL 16.15 on aarch64-unknown-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+(1 row)
+

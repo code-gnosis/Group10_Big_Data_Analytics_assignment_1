@@ -1,0 +1,82 @@
+[
+  {
+    "mode": "Raw",
+    "panel": 1,
+    "title": "Hourly regional energy (kWh)",
+    "median_ms": 250.10216649388894,
+    "min_ms": 215.3535420075059,
+    "max_ms": 315.6706250156276
+  },
+  {
+    "mode": "Raw",
+    "panel": 2,
+    "title": "Daily network energy (kWh)",
+    "median_ms": 153.8802709983429,
+    "min_ms": 149.8836659884546,
+    "max_ms": 171.61529100849293
+  },
+  {
+    "mode": "Raw",
+    "panel": 3,
+    "title": "7-day network energy (periods starting 1,8,15,22 Sep)",
+    "median_ms": 1761.2211874948116,
+    "min_ms": 1557.75295800413,
+    "max_ms": 2026.7694999929518
+  },
+  {
+    "mode": "Raw",
+    "panel": 4,
+    "title": "Daily energy \u2014 meter 1000000000",
+    "median_ms": 1.3120000076014549,
+    "min_ms": 1.14095801836811,
+    "max_ms": 1.7906249850057065
+  },
+  {
+    "mode": "Raw",
+    "panel": 5,
+    "title": "Completeness by region (%)",
+    "median_ms": 5402.867541488376,
+    "min_ms": 5216.789458005223,
+    "max_ms": 5962.60350002558
+  },
+  {
+    "mode": "Aggregate",
+    "panel": 1,
+    "title": "Hourly regional energy (kWh)",
+    "median_ms": 2.647541492478922,
+    "min_ms": 2.4082910094875842,
+    "max_ms": 3.05929098976776
+  },
+  {
+    "mode": "Aggregate",
+    "panel": 2,
+    "title": "Daily network energy (kWh)",
+    "median_ms": 0.9589164837962016,
+    "min_ms": 0.9062080061994493,
+    "max_ms": 1.2531669926829636
+  },
+  {
+    "mode": "Aggregate",
+    "panel": 3,
+    "title": "7-day network energy (periods starting 1,8,15,22 Sep)",
+    "median_ms": 3.5788125096587464,
+    "min_ms": 3.40587500249967,
+    "max_ms": 3.846667008474469
+  },
+  {
+    "mode": "Aggregate",
+    "panel": 4,
+    "title": "Daily energy \u2014 meter 1000000000",
+    "median_ms": 0.389292006730102,
+    "min_ms": 0.3465830232016742,
+    "max_ms": 0.5334579909685999
+  },
+  {
+    "mode": "Aggregate",
+    "panel": 5,
+    "title": "Completeness by region (%)",
+    "median_ms": 3.5159785038558766,
+    "min_ms": 3.405791998375207,
+    "max_ms": 3.7453339900821447
+  }
+]

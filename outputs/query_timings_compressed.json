@@ -1,0 +1,77 @@
+{
+  "Q1/energy_readings": {
+    "median_ms": 22.356417000992224,
+    "min_ms": 22.05741699435748,
+    "max_ms": 25.398416008101776
+  },
+  "Q1/energy_time_compressed": {
+    "median_ms": 22.66779201454483,
+    "min_ms": 21.04816699284129,
+    "max_ms": 24.62070799083449
+  },
+  "Q1/energy_meter_compressed": {
+    "median_ms": 154.36195797519758,
+    "min_ms": 148.58887498849072,
+    "max_ms": 158.08200000901707
+  },
+  "Q2/energy_readings": {
+    "median_ms": 58.253541006706655,
+    "min_ms": 55.04312500124797,
+    "max_ms": 58.99437499465421
+  },
+  "Q2/energy_time_compressed": {
+    "median_ms": 47.33895798563026,
+    "min_ms": 44.68070899019949,
+    "max_ms": 53.498458000831306
+  },
+  "Q2/energy_meter_compressed": {
+    "median_ms": 29.95208400534466,
+    "min_ms": 24.318499985383824,
+    "max_ms": 37.76183299487457
+  },
+  "Q3/energy_readings": {
+    "median_ms": 324.2845000058878,
+    "min_ms": 278.27070801868103,
+    "max_ms": 330.5447080056183
+  },
+  "Q3/energy_time_compressed": {
+    "median_ms": 69.89729098859243,
+    "min_ms": 68.96754199988209,
+    "max_ms": 70.2822909806855
+  },
+  "Q3/energy_meter_compressed": {
+    "median_ms": 56.53195802005939,
+    "min_ms": 52.401291992282495,
+    "max_ms": 60.50849999883212
+  },
+  "Q4/energy_readings": {
+    "median_ms": 0.7990000012796372,
+    "min_ms": 0.708332983776927,
+    "max_ms": 1.0299999848939478
+  },
+  "Q4/energy_time_compressed": {
+    "median_ms": 15.341665974119678,
+    "min_ms": 14.961457985918969,
+    "max_ms": 73.0355829873588
+  },
+  "Q4/energy_meter_compressed": {
+    "median_ms": 0.8591250225435942,
+    "min_ms": 0.8397909987252206,
+    "max_ms": 1.0078329942189157
+  },
+  "Q5/energy_readings": {
+    "median_ms": 193.4739579737652,
+    "min_ms": 186.6480830067303,
+    "max_ms": 208.42645899392664
+  },
+  "Q5/energy_time_compressed": {
+    "median_ms": 69.59791699773632,
+    "min_ms": 68.61804198706523,
+    "max_ms": 80.16729200608097
+  },
+  "Q5/energy_meter_compressed": {
+    "median_ms": 79.79429099941626,
+    "min_ms": 78.17516700015403,
+    "max_ms": 81.23245800379664
+  }
+}

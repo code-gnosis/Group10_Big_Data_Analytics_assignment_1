@@ -1,0 +1,57 @@
+SET
+CREATE INDEX
+NOTICE:  table "energy_readings_3h" does not exist, skipping
+DROP TABLE
+CREATE TABLE
+        create_hypertable        
+---------------------------------
+ (2,public,energy_readings_3h,t)
+(1 row)
+
+INSERT 0 10643735
+ERROR:  relation "energy_readings_3h_event_time_idx" already exists
+CREATE INDEX
+DROP TABLE
+NOTICE:  table "energy_readings_week" does not exist, skipping
+CREATE TABLE
+         create_hypertable         
+-----------------------------------
+ (3,public,energy_readings_week,t)
+(1 row)
+
+INSERT 0 10643735
+ERROR:  relation "energy_readings_week_event_time_idx" already exists
+CREATE INDEX
+ANALYZE
+ANALYZE
+ANALYZE
+
+--- Chunk counts and intervals ---
+   hypertable_name    | time_interval | chunks 
+----------------------+---------------+--------
+ energy_readings      | 1 day         |     29
+ energy_readings_3h   | 03:00:00      |    225
+ energy_readings_week | 7 days        |      5
+(3 rows)
+
+
+--- Row-count / meter-count / date / sum checks on all 3 tables ---
+         tbl          |   rows   | meters |        earliest        |         latest         | sum_power_kw | sum_energy_kwh 
+----------------------+----------+--------+------------------------+------------------------+--------------+----------------
+ energy_readings      | 10643735 |   4000 | 2026-09-01 00:00:00+02 | 2026-09-28 23:45:00+02 | 15414817.388 |    3853704.347
+ energy_readings_3h   | 10643735 |   4000 | 2026-09-01 00:00:00+02 | 2026-09-28 23:45:00+02 | 15414817.388 |    3853704.347
+ energy_readings_week | 10643735 |   4000 | 2026-09-01 00:00:00+02 | 2026-09-28 23:45:00+02 | 15414817.388 |    3853704.347
+(3 rows)
+
+
+--- Indexes on each table ---
+      tablename       |              indexname              
+----------------------+-------------------------------------
+ energy_readings      | energy_readings_event_time_idx
+ energy_readings      | energy_readings_meter_time_idx
+ energy_readings_3h   | energy_readings_3h_event_time_idx
+ energy_readings_3h   | energy_readings_3h_meter_time_idx
+ energy_readings_week | energy_readings_week_event_time_idx
+ energy_readings_week | energy_readings_week_meter_time_idx
+(6 rows)
+
